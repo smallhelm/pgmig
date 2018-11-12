@@ -27,7 +27,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "build": "rm -rf dist && tsc",
-    "test": "ava"
+    "test": "npm run build && rm -rf test-migration && ava"
   },
   "devDependencies": {
     "@types/node": "^10.12.5",

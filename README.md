@@ -1,9 +1,13 @@
-# pgmig
+# postgres-mig
 
 [![Build Status](https://travis-ci.org/smallhelm/pgmig.svg)](https://travis-ci.org/smallhelm/pgmig)
 [![TypeScript](https://img.shields.io/badge/types-TypeScript-blue.svg)](https://www.typescriptlang.org)
 
 Simple PostgreSQL migrations for nodejs without an ORM.
+
+```sh
+npm i postgres-mig
+```
 
 ## Example
 
@@ -73,7 +77,7 @@ var dir = __dirname + "/migration";
 var Client = require("pg").Client;
 var client = new Client({..});
 
-require("pgmig").runCli(dir, client);
+require("postgres-mig").runCli(dir, client);
 ```
 
 ## API
@@ -81,9 +85,9 @@ require("pgmig").runCli(dir, client);
 You can programmatically run migrations. Useful for testing.
 
 ```js
-import { PgMig } from "pgmig";
+import { PgMig } from "postgres-mig";
 // or
-var PgMig = require("pgmig").PgMig;
+var PgMig = require("postgres-mig").PgMig;
 ```
 
 Read the code, it's less than 100 lines. [src/PgMig.ts](https://github.com/smallhelm/pgmig/blob/master/src/PgMig.ts)

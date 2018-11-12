@@ -8,7 +8,7 @@ test('PgMig', async function (t) {
   const dir = path.resolve(__dirname, 'test-migration')
   t.false(fs.existsSync(dir))
 
-  const client = new pg.Client()
+  const client = new pg.Client({ database: 'travis_ci_test' })
   await client.connect()
   await client.query('DROP TABLE IF EXISTS z_migration')
   await client.query('DROP TABLE IF EXISTS foo')

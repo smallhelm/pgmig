@@ -1,6 +1,6 @@
 {
   "name": "postgres-mig",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Simple PostgreSQL migrations for nodejs without an ORM",
   "repository": {
     "type": "git",

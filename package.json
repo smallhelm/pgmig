@@ -1,0 +1,45 @@
+{
+  "name": "pgmig",
+  "version": "0.0.0",
+  "description": "Simple PostgreSQL migrations for nodejs without an ORM",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smallhelm/pgmig.git"
+  },
+  "keywords": [
+    "PostgreSQL",
+    "migration",
+    "sql",
+    "no-orm",
+    "pg"
+  ],
+  "author": "farskipper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smallhelm/pgmig/issues"
+  },
+  "homepage": "https://github.com/smallhelm/pgmig#readme",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "rm -rf dist && tsc",
+    "test": "ava"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.5",
+    "@types/pg": "^7.4.11",
+    "ava": "^0.25.0",
+    "pg": "^7.6.1",
+    "typescript": "^3.1.6"
+  },
+  "peerDependencies": {
+    "pg": "^7.0.0"
+  },
+  "dependencies": {
+    "prompt-confirm": "^2.0.4"
+  }
+}

@@ -22,8 +22,12 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
+    "bin",
     "dist"
   ],
+  "bin": {
+    "pgmig": "bin/pgmig"
+  },
   "scripts": {
     "prepublish": "npm run build",
     "build": "rm -rf dist && tsc",

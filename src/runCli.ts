@@ -5,9 +5,9 @@ import { Client } from "pg";
 const Confirm = require("prompt-confirm");
 
 const template = `module.exports = {
-  up: async function up (client) {
+  async up(client) {
   },
-  down: async function down (client) {
+  async down(client) {
   }
 }
 `;
@@ -98,7 +98,10 @@ const cmds: { [cmd: string]: CliCmd } = {
   }
 };
 
-export = async function runCli(dir: string, client?: Client) {
+export async function runCli(dir?: string, client?: Client) {
+  if (!dir) {
+    dir = path.resolve(process.cwd(), "migration");
+  }
   if (!client) {
     client = new Client();
   }
@@ -134,4 +137,4 @@ export = async function runCli(dir: string, client?: Client) {
     console.error();
     process.exit(1);
   }
-};
+}

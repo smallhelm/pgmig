@@ -38,21 +38,21 @@ test('PgMig', async function (t) {
 
   fs.writeFileSync(path.resolve(dir, '000.js'), `
   module.exports = {
-    up: async function up (client) {
+    async up(client) {
       await client.query('CREATE TABLE foo (bar TEXT)')
     },
-    down: async function down (client) {
+    async down(client) {
       await client.query("DROP TABLE foo");
     }
   }
   `, 'utf8')
   fs.writeFileSync(path.resolve(dir, '001.js'), `
   module.exports = {
-    up: async function up (client) {
+    async up(client) {
       await client.query('CREATE TABLE baz (qux TEXT)')
       await client.query('CREATE TABLE quux (quuz TEXT)')
     },
-    down: async function down (client) {
+    async down(client) {
       await client.query("DROP TABLE quux");
       await client.query("DROP TABLE baz");
     }
